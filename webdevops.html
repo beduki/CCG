@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web development resources</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navigation styles */
+        .navigation {
+            width: 250px;
+            background-color: #282828;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding-top: 60px;
+        }
+        
+        .navigation ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .navigation ul li {
+            margin-bottom: 10px;
+        }
+        
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .navigation ul li a:hover {
+            background-color: #333;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .main-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer styles */
+        .footer {
+            background-color: #282828;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Navbar styles */
+.navbar {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+    background-color: #0056b3;
+}
+
+/* Container styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Main content styles */
+.main-content {
+    margin-top: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+        </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="#prac1">Practical 1</a></li>
+            <li><a href="#prac2">Practical 2</a></li>
+            <li><a href="#prac4">Practical 4</a></li>
+            <li><a href="#prac5">Practical 5</a></li>
+            <li><a href="#prac8">Practical 8</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <section id="prac1">
+            <h2>Use of basic tag's</h2>
+            <pre><code>
+                Q1 Design a webpage using different formatting tags.
+                Note- save the file of this code with any name with the extension ".html" at the end
+
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page 1&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                FYIT-B&lt;br&gt;
+                    &lt;b&gt;FYIT-B&lt;/b&gt;&lt;br&gt;
+                    &lt;i&gt;FYIT-B&lt;/i&gt;&lt;br&gt;
+                    &lt;u&gt;FYIT-B&lt;/u&gt;&lt;br&gt;
+                    &lt;s&gt;FYIT-B&lt;/s&gt;&lt;br&gt;
+                    &lt;center&gt;FYIT-B&lt;/center&gt;&lt;br&gt;
+                    &lt;small&gt;FYIT-B&lt;/small&gt;&lt;br&gt;
+                    &lt;big&gt;FYIT-B&lt;/big&gt;&lt;br&gt;
+                    &lt;tt&gt;FYIT-B&lt;/tt&gt;&lt;br&gt;
+                    FYIT-&lt;sub&gt;B&lt;/sub&gt;&lt;br&gt;
+                    FYIT-&lt;sup&gt;&lt;/sup&gt;&lt;br&gt;
+                    &lt;font color="red" face="ravie"&gt;FYIT-B&lt;/font&gt;&lt;br&gt;
+                    &lt;marquee bgcolor="red" direction="right" width=500px height=250px scrollamount=25&gt;"Pratham"&lt;/marquee&gt;&lt;br&gt;
+                    &lt;mark&gt;My name is Pratham&lt;/mark&gt;&lt;br&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+
+            Q2) Design a web page with links to different pages and allow navigation between web pages.
+
+            page1:
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page 1&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;font size="7"&gt;
+                    &lt;a href="#bottom"&gt;Bottom&lt;/a&gt;
+                    &lt;a name="Top"&gt;&lt;/a&gt;
+                        This is first page&lt;a href="link2.html" target="_blank" title="relative"&gt; next page&lt;/a&gt;
+                        For queries &lt;a href="mailto:ABC@gmail.com" title="admin contact"&gt;Contact us&lt;/a&gt;
+                        FYIT-B&lt;br&gt;
+                        &lt;b&gt;FYIT-B&lt;/b&gt;&lt;br&gt;
+                        &lt;i&gt;FYIT-B&lt;/i&gt;&lt;br&gt;
+                        &lt;u&gt;FYIT-B&lt;/u&gt;&lt;br&gt;
+                        &lt;s&gt;FYIT-B&lt;/s&gt;&lt;br&gt;
+                        &lt;center&gt;FYIT-B&lt;/center&gt;&lt;br&gt;
+                        &lt;small&gt;FYIT-B&lt;/small&gt;&lt;br&gt;
+                        &lt;big&gt;FYIT-B&lt;/big&gt;&lt;br&gt;
+                        &lt;tt&gt;FYIT-B&lt;/tt&gt;&lt;br&gt;
+                        FYIT-&lt;sub&gt;B&lt;/sub&gt;&lt;br&gt;
+                        FYIT-&lt;sup&gt;&lt;/sup&gt;&lt;br&gt;
+                        &lt;font color="red" face="ravie"&gt;FYIT-B&lt;/font&gt;&lt;br&gt;
+                        &lt;marquee bgcolor="red" direction="right" width=500px height=250px scrollamount=25&gt;"Pratham"&lt;/marquee&gt;&lt;br&gt;
+                        &lt;mark&gt;My name is Pratham&lt;/mark&gt;&lt;br&gt;
+                        &lt;a name="bottom"&gt;&lt;/a&gt;
+                        &lt;a href="#top"&gt;Top&lt;/a&gt;
+                    &lt;/font&gt;
+                    &lt;/body&gt;
+            &lt;/html&gt;
+
+            page 2:
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page 2&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    This is second page &lt;a href="link1.html"&gt;link&lt;/a&gt; 
+                &lt;/body&gt;
+            &lt;/html&gt;
+
+            Q3) Design a web page that automatically redirects the user to another page.
+
+            page 1:
+            &lt;html&gt; 
+                &lt;head&gt;
+                    &lt;title&gt;Page 1&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    This is first page &lt;a href="link2.html" target="_blank"&gt;next page&lt;/a&gt;&lt;br&gt;
+                    For queries: &lt;a href="mailto:ABC@gmail.com" title="admin contact"&gt;Contact Us&lt;/a&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;	
+
+            page 2:
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page 2&lt;/title&gt;
+                    &lt;style&gt;
+                        h1{
+                            background-color: green;
+                            text-align: center;
+                        }
+                    &lt;/style&gt;
+                &lt;/head&gt;
+                &lt;body style="background-color: aqua;"&gt;
+                &lt;h1&gt;This is a heading&lt;/h1&gt;
+                    &lt;p&gt;This is second page&lt;/p&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+
+
+
+
+
+            </code></pre>
+        </section>
+
+        <section id="prac2">
+            <h2>Use of css</h2>
+            <pre><code>
+                Q1 Design a webpage demonstrating different stylesheet types.
+
+                a. Inline css
+
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Selector&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1 style="background-color: orange;" style="border: 5px;"&gt;Element selector&lt;/h1&gt;
+                        &lt;h3 style="color: red;" style="background-color"&gt;Universal selector&lt;/h3&gt;
+                        &lt;p style="text-decoration: line-through;" style="text-decoration-color: aqua;"&gt;Group selector&lt;/p&gt;
+                        &lt;p id="other-para"&gt;This is a paragraph&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                 b. Internal css
+                
+                 &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;style&gt;
+                        h1{
+                            color: brown;
+                            text-align: center;
+                            text-decoration: underline overline;
+                                    text-decoration-color: red;	
+                        }	
+                        p{
+                            font-size: 30;
+                                }
+                        &lt;/style&gt;			
+                    &lt;/head&gt; 
+                    &lt;body&gt; 
+                        &lt;h1&gt;This is a heading&lt;/h1&gt;
+                        &lt;p&gt;This is a paragraph&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                c. external class
+
+                page 1:
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Selector&lt;/title&gt;
+                        &lt;link rel="stylesheet" href="style.css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Element selector&lt;/h1&gt;
+                        &lt;h3&gt;Universal selector&lt;/h3&gt;
+                        &lt;p&gt;Group selector&lt;/p&gt;
+                        &lt;p id="other-para"&gt;This is a paragraph&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                page 2:
+                h1{
+                    background-color: yellow;
+                    text-align: center;
+                    border: 5 px solid orange;
+                    border-radius: 50 px;
+                  }
+                  *{
+                    background-color: lightblue;
+                    font-family: castellar;
+                  }
+                  p,h2{
+                    background-color: palegreen;
+                    text-align: center;
+                    color: green;
+                  }
+                  other-para{   
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                    color: green;
+                  }
+                
+
+
+            </code></pre>
+        </section>
+
+        <section id="prac4">
+            <h2>Tables and forms</h2>
+            <pre><code>
+
+                4.1
+
+                &lt;html&gt;
+                &lt;body&gt;
+                &lt;table&gt;
+                &lt;tr&gt;
+                &lt;th&gt;A&lt;/th&gt;
+                &lt;th&gt;B&lt;/th&gt;
+                &lt;th&gt;C&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;th&gt;D&lt;/th&gt;
+                &lt;th&gt;E&lt;/th&gt;
+                &lt;th&gt;F&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;th&gt;G&lt;/th&gt;
+                &lt;th&gt;H&lt;/th&gt;
+                &lt;th&gt;I&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                4.2
+
+                &lt;html&gt;
+                &lt;body bgcolor="lightblue"&gt;
+                &lt;table border=5 bordercolor="red" width=50% height=80% bgcolor="pink" align="center" cellpadding=20 cellspacing=10 summary="details of students"&gt;
+                &lt;caption&gt;Students Details FYIT&lt;/caption&gt;
+                &lt;tr&gt;
+                &lt;th&gt;First Name&lt;/th&gt;
+                &lt;th&gt;Last Name&lt;/th&gt;
+                &lt;th&gt;Subject Name&lt;/th&gt;
+                &lt;th&gt;Grade&lt;/th&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td&gt;Harry&lt;/td&gt;
+                &lt;td&gt;Potter&lt;/td&gt;
+                &lt;td&gt;IT&lt;/td&gt;
+                &lt;td&gt;A&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td colspan=2&gt;TDM&lt;/td&gt;
+                &lt;td&gt;CS&lt;/td&gt;
+                &lt;td&gt;O&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td&gt;jack&lt;/td&gt;
+                &lt;td&gt;jill&lt;/td&gt;
+                &lt;td&gt;B&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td colspan=4 align="center"&gt;&lt;b&gt;&lt;a href="https://www.ruparel.edu"&gt;Contact Us&lt;/a&gt;&lt;/b&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                4.3
+
+                &lt;html&gt;
+                &lt;body&gt;
+                &lt;h1&gt;Student Details&lt;/h1&gt;
+                &lt;form name="form1" method="get"&gt;
+                First Name:&lt;input type="text" name="fname" value="jack sparrow" size=30&gt;&lt;br&gt;
+                SurName:&lt;input type="text" name="Sname" placeholder="can be empty" maxlength=13&gt;&lt;br&gt;
+                Roll No:&lt;input typr="number" name="rn"&gt;&lt;br&gt;
+                Address:&lt;br&gt;
+                &lt;textarea rows=4 cols=25&gt;Enter address hee &lt;/textarea&gt;&lt;br&gt;
+                Password:&lt;input type="password" name="pwd" placeholder="give strong password" maxlenght=13&gt;&lt;br&gt;
+                State:
+                &lt;select name="state" size=2&gt;
+                &lt;option value="m"&gt;Maharashtra&lt;/option&gt;
+                &lt;option value="g"&gt;Goa&lt;/option&gt;
+                &lt;option value="r"&gt;Rajasthan&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;br&gt;
+                Mobile:&lt;input type="tel" name="mob" maxlength=10&gt;&lt;br&gt;
+                paper:
+                &lt;label for="LI"&gt;OOP&lt;/label&gt;
+                &lt;input type="checkbox" name="p1" value="oop" id="LI"&gt;
+                FMM&lt;input type="checkbox" name="p2" value="fmm" checked&gt;
+                WEB&lt;input type="checkbox" name="p3" value="web"&gt;&lt;br&gt;
+                &lt;br&gt;
+                Stream:
+                IT&lt;input type="radio" name="rb1" value="it"&gt;
+                CS&lt;input type="radio" name="rb1" value="cs"&gt;
+                BMS&lt;input type="radio" name="rb1" value="bms"&gt;
+                &lt;br&gt;
+                signature:&lt;input type="file" name="sign" accept="image/*"&gt;
+                &lt;br&gt;
+                No. of KT's:&lt;input type="range" name="points" min=0 max=10 oninput="this nextElementSibling value= this value"&gt;&lt;output&gt;0&lt;/output&gt;&lt;br&gt;
+                DOB:&lt;input type="date" name="dob"&gt;&lt;br&gt;
+                color:&lt;input type="color" id="favcolor" name="favcolor" value="#00ff00"&gt;&lt;br&gt;
+                UIN:&lt;input type="hidden" name="uin" value=3487"&gt;&lt;br&gt; &lt;br&gt;
+                &lt;input type="submit" value="submit"&gt;
+                &lt;input type="button" value="okay"&gt;
+                &lt;input type="reset" value="rest"&gt;
+                &lt;input type="image" src="republic.jpg" width=200 height=100&gt;
+                &lt;/form&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                4.4
+
+                &lt;html&gt;
+                &lt;body&gt;
+                &lt;table border=5 bordercolor=blue width=50&gt;
+                &lt;caption&gt;student detail&lt;/caption&gt;
+                &lt;tr&gt;
+                &lt;td&gt;name&lt;/td&gt;
+                &lt;td&gt;subject&lt;/td&gt;
+                &lt;td&gt;marks&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td&gt;aryan&lt;/td&gt;
+                &lt;td&gt;maths&lt;/td&gt;
+                &lt;td&gt;95&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td&gt;pratham&lt;/td&gt;
+                &lt;td&gt;dbms&lt;/td&gt;
+                &lt;td&gt;95&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                &lt;td&gt;om&lt;/td&gt;
+                &lt;td&gt;cpp&lt;/td&gt;
+                &lt;td&gt;95&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;/table&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+            </code></pre>
+        </section>
+
+        <section id="prac5">
+            <h2>Javascript</h2>
+            <pre><code>
+                5.1
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h3&gt;Find if the entered number is even or odd.&lt;/h3&gt;
+                        Enter a number: &lt;input type="number" id="num" placeholder="integer number"&gt;
+                        &lt;button onclick="demo()"&gt;find&lt;/button&gt;
+                        &lt;br&gt;
+                        &lt;p id="ans"&gt;&lt;/p&gt;
+                        &lt;script&gt;
+                            function demo(){
+                                var n;
+                                n = document.getElementById("num").value;
+
+                                if(n % 2 === 0){
+                                    document.getElementById("ans").innerText="ENTERED NUMBER IS EVEN!";
+                                }
+                                else{
+                                    document.getElementById("ans").innerText="ENTERED NUMBER IS ODD!";
+                                }
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.2
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h3&gt;
+                        POSITIVE OR NEGATIVE OR NEUTRAL
+                        &lt;/h3&gt;
+                        enter a number:&lt;input type="number" id="num" placeholder="number"&gt;
+                        &lt;button onclick="demo()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;p id="ans"&gt;&lt;/p&gt;
+                        &lt;script&gt;
+                            function demo(){
+                                    var n = document.getElementById("num").value;
+                                    var result = document.getElementById("ans");
+                                    if(n&gt;0){
+                                        result.innerText="Entered number is positive!";
+                                    }
+                                    else if(n&lt;0){
+                                        result.innerText="Entered number is negative!";
+                                    }
+                                    else{
+                                        result.innerText="Entered number is zero!"
+                                    }
+                            }   
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+                
+                5.3
+
+                &lt;html&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Factorial of a number:&lt;/h1&gt;
+                    Enter a number:&lt;input type="number" id="n"&gt;
+                    &lt;button onclick="facto()"&gt;FIND ANSWER&lt;/button&gt;
+                    &lt;p id="a"&gt;&lt;/p&gt;
+                    &lt;script&gt;
+                        function facto(){
+                            var i,num,fact=1;
+                            num = document.getElementById("n").value;
+                            for(i=1;i&lt;=num;i++){
+                                fact = fact * i;
+                            }
+                            var ans = document.getElementById("a");
+                            ans.innerText="answer is "+fact;
+                        }
+                    &lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.4
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Factorial using Recursive function&lt;/h1&gt;
+                        Enter a number:&lt;input type="number" id="n"&gt;
+                        &lt;button onclick="fn2()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;P id="a"&gt;&lt;/P&gt;
+                        &lt;script&gt;
+                            function fn2(){
+                                    var num = document.getElementById("n").value;
+                                    var ans = fn1(num);
+                                    document.getElementById("a").innerText="factorial is "+ans;
+                            }
+                            function fn1(num){
+                                    if(num == 0){
+                                        return 1;
+                                    }
+                                    else{
+                                        return num*fn1(num-1);
+                                    }
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.5
+
+                &lt;html&gt;
+                &lt;body&gt;
+                    &lt;h2&gt;Prime Numbers&lt;/h2&gt;
+                    Enter a number:&lt;input type="number" id="n"&gt;
+                    &lt;button onclick="prime()"&gt;FIND ANSWER&lt;/button&gt;
+                    &lt;p id="a"&gt;&lt;/p&gt;
+                    &lt;script&gt;
+                        function prime(){
+                            var n, i, ans;
+                            n = document.getElementById("n").value;
+                            ans = document.getElementById("a");
+                            if(n==1 || n==0){
+                                ans = false;
+                            }
+                            for(i = 2; i &lt; n; i++){
+                                if(n % 1 == 0){
+                                    ans = false;
+                                }
+                            }
+                            if(ans = false){
+                                ans.innerText = "not prime";
+                            }
+                            else{
+                                ans.innerText = "Prime";
+                            }}
+                            &lt;/script&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                        
+                5.6
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Prime Numbers in the given range: &lt;/h1&gt;
+                        Enter first number:&lt;input type="number" id="n1"&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        Enter second number:&lt;input type="number" id="n2"&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        &lt;button onlick="checkprime()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;script&gt;
+                            function checkprime(){
+                                var min, max, i, j, c;
+                                min = document.getElementById("n1").value;
+                                max = document.getElementById("n2").value;
+                                document.write("Prime number in given rangr are &lt;br&gt;");
+                                for(i = min; i &lt;= max; i++){
+                                        c = 0;
+                                        for(j = 1; j &lt;= i; j++){
+                                            if(i % j == 0 ){
+                                                c++;
+                                            }
+                                        }
+                                        if(c == 2){
+                                            document.write(i+"&lt;br&gt;");
+                                        }
+                                    }
+                                }
+                            &lt;/script&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+
+                5.7
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;
+                            Sum of digits:
+                        &lt;/h1&gt;
+                        Enter a number: &lt;input typr="number" id="n"&gt;
+                        &lt;button onclick="sumofdig()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;P id="result"&gt;&lt;/P&gt;
+                        &lt;script&gt;
+                            function sumofdig(){
+                                var num, rem, sum = 0;
+                                num = document.getElementById("n").value;
+                                while(num){
+                                    rem = num%10;
+                                    sum = sum+rem;
+                                    num = Math.floor(num/10);
+                                }
+                                document.getElementById("result").innerText ="The sum of the digits of entered number is : "+sum;
+                            }
+                        &lt;/script&gt;  
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.8
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;REVERSE OF NUMBER: &lt;/h1&gt;
+                        Enter a number:&lt;input type="number" id="n"&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        &lt;button onclick="reverse()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;br&gt;
+                        &lt;p id="result"&gt;&lt;/p&gt;
+                        &lt;script&gt;
+                            function reverse(){
+                                var rem, num, sum = 0;
+                                num = document.getElementById("n").value;
+                                while(num){
+                                    rem = num%10;
+                                    sum = sum*10+rem;
+                                    num = Math.floor(num/10);
+                                }
+                                document.getElementById("result").innerText = "The reverse of the entered number is "+sum;
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.9
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;
+                            CHECK IF NUMBER IS PALINDROME OR NOT:
+                        &lt;/h1&gt;
+                        ENTER A NUMBER:&lt;input type="number" id="n"&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        &lt;button onclick="pali()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;p id="r1"&gt;&lt;/p&gt;
+                        &lt;p id="r2"&gt;&lt;/p&gt;
+                        &lt;script&gt;
+                            function pali(){
+                                var rem, num, copy_num, sum = 0;
+                                num = document.getElementById("n").value;
+                                copy_num = num;
+                                while(num){
+                                    rem = num%10;
+                                    sum = sum*10+rem;
+                                    num = Math.floor(num/10);
+                                }
+                                document.getElementById("r1").innerText = "The reverse of the entered number is : "+sum;
+                                if(copy_num==sum){
+                                    document.getElementById("r2").innerText = "entered number is palindrome number!";
+                                }else{
+                                    document.getElementById("r2").innerText = "entered number is not a palindrome number!";
+                                }
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                5.10
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;FIBONACCI SERIES: &lt;/h1&gt;
+                        ENTER A NUMBER: &lt;input type="number" id="n"&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        &lt;button onclick="fibo()"&gt;FIND ANSWER&lt;/button&gt;
+                        &lt;script&gt;
+                            function fibo(){
+                                var n1 = 0, n2 = 1, next_num, i;
+                                var num = document.getElementById("n").value;
+                                document.write("fibonacci series is :");
+                                for(i = 1; i &lt;= num; i++){
+                                    document.write("&lt;br&gt;"+n1);
+                                    next_num = n1 + n2;
+                                    n1 = n2;
+                                    n2 = next_num;
+                                }
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+
+
+
+
+
+
+
+            </code></pre>
+        </section>
+
+        <section id="prac8">
+            <h2>Basic PHP</h2>
+            <pre><code>
+                a. Write a PHP code to find the greater of 2 numbers. Accept the no. from the user.
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                    &lt;form method="post"&gt;
+                        Enter First Number: &lt;input type="text" name="no1"&gt;&lt;br&gt;
+                        Enter Second Number: &lt;input type="text" name="no2"&gt;&lt;br&gt;
+                        Enter Third Number: &lt;input type="text" name="no3"&gt;&lt;br&gt;
+                        &lt;input type="submit" name="submit" value="FIND"&gt;
+                        &lt;input type="reset" value="CLEAR"&gt;
+                    &lt;/form&gt;
+
+                    &lt;?php
+                    if(isset($_POST['submit']))
+                    {
+                    $num1 = $_POST['no1'];
+                    $num2 = $_POST['no2']; 
+                    $num3 = $_POST['no3'];
+                    if($num1 > $num2 && $num1 > $num3)
+                    {
+                        echo $num1 . " is greatest. It's the first value entered by you";
+                    }
+                    else
+                    {
+                        if ($num2 > $num1 && $num2 > $num3)
+                        {
+                            echo $num2 . " is greatest. It's the second value entered by you";
+                        }
+                        else
+                        {
+                            echo $num3 . " is greatest. It's the third value entered by you";
+                        }
+                    }
+                }
+                ?&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                b. Write a PHP program to accept a number from the user and print it factorial.
+
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Factorial Program using loop in PHP&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;form method="post"&gt; 
+                        Enter the Number: &lt;br&gt;
+                        &lt;input type="number" name="number"&gt;
+                        &lt;input type="submit" name="submit" value="Submit"/&gt;
+                    &lt;/form&gt;
+
+                    &lt;?php
+                    if($_POST)
+                    {
+                        $fact = 1;
+                        $number = $_POST['number']; 
+                        echo "Factorial of $number: &lt;br&gt;&lt;br&gt;";
+                        for ($i=1; $i &lt;= $number; $i++)
+                        {
+                            $fact *= $i;
+                        }
+                        echo $fact . "&lt;br&gt;";
+                    }
+                    ?&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+
+                c.Write a PHP program to accept a number from the user and print whether it is prime or not.
+
+                &lt;html&gt;
+                    &lt;body&gt;
+                    &lt;form method="post"&gt;
+                        Enter the Number: &lt;br&gt;
+                        &lt;input type="number" name="num1"&gt;
+                        &lt;input type="submit" name="submit" value="Submit" /&gt;
+                    &lt;/form&gt;
+
+                    &lt;?php
+                    if($_POST)
+                    {
+                        $num = $_POST['num1'];
+                    $count = 0;
+                    for ($i=1; $i &lt;= $num; $i++) 
+                    {
+                        if (($num % $i) == 0)
+                        {
+                            $count++;
+                        }
+                    }
+                    if ($count &lt; 3)
+                    {
+                        echo "$num is a prime number.";
+                    }
+                    else
+                    {
+                        echo "$num is not a prime number.";
+                    }
+                }
+                ?&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+
+                d. Write a PHP program to display the following Binary Pyramid:
+
+                &lt;?php
+                echo "&lt;html&gt;&lt;body&gt;";
+                for($i=1;$i&lt;=5;$i++)
+                { 
+                    for($j=1;$j&lt;=$i;$j++)
+                    {
+                        if (($i+$j) % 2 == 0)
+                        {
+                            echo "1";
+                        }
+                        else
+                        {
+                            echo "0";
+                        }
+                    }
+                    echo "&lt;br&gt;";
+                }
+                echo "&lt;/body&gt;&lt;/html&gt;";
+                ?&gt;
+
+
+
+            </code></pre>
+            <!-- Add more content as needed -->
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 PL/SQL Documentation</p>
+    </footer>
+
+</body>
+</html>
