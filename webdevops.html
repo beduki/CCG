@@ -142,6 +142,7 @@ footer {
             <li><a href="#prac2">Practical 2</a></li>
             <li><a href="#prac4">Practical 4</a></li>
             <li><a href="#prac5">Practical 5</a></li>
+            <li><a href="#prac7">Practical 7</a></li>
             <li><a href="#prac8">Practical 8</a></li>
         </ul>
     </nav>
@@ -764,6 +765,128 @@ footer {
 
             </code></pre>
         </section>
+        <section id="prac7">
+            <h2>Javascript Events</h2>
+            <pre><code>
+                1. calulator
+
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;style&gt;
+                            table , td{
+                                text-align: center;
+                                border : 3px solid black;
+                                background-color: orange;
+                            }
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;table&gt;
+                            &lt;tr &gt;
+                                &lt;td colspan="3"&gt;&lt;input type="text" id="result"&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="clearscr()" value="c" id="clear"&gt;C&lt;/button&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;Td&gt;&lt;button onclick="display('1')"&gt;1&lt;/button&gt;&lt;/Td&gt;
+                                &lt;td&gt;&lt;button onclick="display('2')"&gt;2&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('3')"&gt;3&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('/')"&gt;/&lt;/button&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;Td&gt;&lt;button onclick="display('4')"&gt;4&lt;/button&gt;&lt;/Td&gt;
+                                &lt;td&gt;&lt;button onclick="display('5')"&gt;5&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('6')"&gt;6&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('-')"&gt;-&lt;/button&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;Td&gt;&lt;button onclick="display('7')"&gt;7&lt;/button&gt;&lt;/Td&gt;
+                                &lt;td&gt;&lt;button onclick="display('8')"&gt;8&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('9')"&gt;9&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('+')"&gt;+&lt;/button&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;Td&gt;&lt;button onclick="display('.')"&gt;.&lt;/button&gt;&lt;/Td&gt;
+                                &lt;td&gt;&lt;button onclick="display('')"&gt;0&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="calculate()"&gt;=&lt;/button&gt;&lt;/td&gt;
+                                &lt;td&gt;&lt;button onclick="display('*')"&gt;*&lt;/button&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/table&gt;
+                        &lt;script&gt;
+                            function display(value){
+                                document.getElementById("result").value += value;
+                            }
+                            function clearscr(){
+                                document.getElementById("result").value = "";
+                            }
+                            function calculate(){
+                                var p = document.getElementById("result").value;
+                                var q = eval(p);
+                                document.getElementById("result").value = q;
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+                2.form validation:
+
+                &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h2&gt;FORM VALIDATION : &lt;/h2&gt;
+                        &lt;FORM name="f1"&gt;
+                            &lt;table&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;enter name :&lt;/td&gt;
+                                    &lt;td&gt;&lt;input type="text" name="t1"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;enter roll no : &lt;/td&gt;
+                                    &lt;td&gt;&lt;input type="number" name="t2"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;enter password : &lt;/td&gt;
+                                    &lt;td&gt;&lt;input type="password" name="t3"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;enter password, again : &lt;/td&gt;
+                                    &lt;td&gt;&lt;input type="password" name="t4"&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;&lt;button onclick="getinfo()"&gt;submit&lt;/button&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;button type="reset"&gt;reset&lt;/button&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/FORM&gt;
+                        &lt;script&gt;
+                            function getinfo(){
+                                var a = f1.t1.value;
+                                var b = parseInt(f1.t2.value);
+                                var c = f1.t3.value;
+                                var d = f1.t4.value;
+                                if(a==""||b==""||c==""||d==""){
+                                    alert("please enter information in the input");
+                                }
+                                else if(isNaN(b)||b&lt;=0){
+                                    alert("please enter roll no correctly");
+                                }
+                                else if(c.length&lt;8){
+                                    alert("password must be atleast 8 characters");
+                                }
+                                else if(c!=d){
+                                    alert("password must match");
+                                }
+                                else{
+                                    alert("information submitted successfully!")
+                                }
+                            }
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+
+
+            </code></pre>
+        </section>
 
         <section id="prac8">
             <h2>Basic PHP</h2>
@@ -893,6 +1016,15 @@ footer {
                 ?&gt;
 
 
+
+
+
+
+
+
+
+
+                
 
             </code></pre>
             <!-- Add more content as needed -->
