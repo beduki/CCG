@@ -681,9 +681,46 @@
         <section id="prac6">
             <h2>Procedures in pl/sql</h2>
             <pre><code>
+                1
 
-            </code></pre>
-        </section>
+                create table student (id number(5), name varchar2(20), mobile varchar2(10), email varchar2(25));
+                create sequence seq_stud
+                start with 101
+                increment by 1;
+                create or replare prodecure val_ins1(s_name IN varchar2, s_mobile IN varchar2, s_email IN varchar2) IS
+                BEGIN
+                INSERT INTO student values(seq_stud.nextval, s_name, s_mobile, s_email);
+                commit;
+                end val_ins1;
+                
+                
+                exec val_ins1('swara',9876543215,'swara@gmail.com');
+                .
+                .
+                .
+                .
+                
+                2
+                
+                create of replace procedure print_contact(student_id number) IS
+                r_contact student%rowtype;
+                begin
+                select * into r_contact
+                from student
+                where id=student_id;
+                dbms_output.put_line(r_contact.name ||''||r_contact.mobile||''||r_contact.email);
+                exception
+                when other then
+                dbms_output.put_line(SQLERRM);
+                end;
+                begin
+                
+                student_id:=&number;
+                print_contact(student_id);
+                end;
+                /
+                            </code></pre>
+                        </section>
 
         <section id="prac7">c
             <h2>Functions in pl/sql</h2>
