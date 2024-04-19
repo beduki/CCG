@@ -96,6 +96,10 @@
             <li><a href="#prac1">Practical 1</a></li>
             <li><a href="#prac2">Practical 2</a></li>
             <li><a href="#prac3">Practical 3</a></li>
+            <li><a href="#prac4">Practical 4</a></li>
+            <li><a href="#prac5">Practical 5</a></li>
+            <li><a href="#prac6">Practical 6</a></li>
+            <li><a href="#prac7">Practical 7</a></li>
             <li><a href="#prac8">Practical 8</a></li>
             <li><a href="#prac9">Practical 9</a></li>
             <li><a href="#prac10">practical 10</a></li>
@@ -513,6 +517,299 @@
                 
                     
                     </PRE></p>
+        </section>
+
+        <SECTION ID="prac4">
+            <H2>Sequences in pl/sql</H2>
+            <pre><code>
+                1
+
+                CREATE SEQUENCE MY_FIRST_SEQ
+                SELECT MY_FIRST_SEQ.CURRVAL FROM DUAL;
+                SELECT MY_FIRST_SEQ.NEXTVAL FROM DUAL;
+
+                2
+
+                CREATE SEQUENCE MU_SEQUENCE_SEQ CACHE 50;
+                SELECT MY_SECOND_sEQ.NEXTVAL FROM DUAL;
+
+                3
+
+
+                CREATE SEQUENCE MY_SEQ_#
+                MINVALUE 10
+                MAXVALUE 30
+                START WITH 10
+                INCREMTENT BBY 10
+                CYCLE
+                NO CACHE;
+                SELECT MY_SEQ_3.NEXTVAL FROM DUAL;
+                SELECT MY_SEQ_3.NEXTVAL FROM DUAL;
+                SELECT MY_SEQ_3.NEXTVAL FROM DUAL;
+                SELECT MY_SEQ_3.NEXTVAL FROM DUAL;
+
+                4
+
+                CREATE TABLE SUPPLIER(ID INT, NAME VARCHAR2(20));
+                CREATE SEQUENCE SUPPLIER_SEQ
+                MINVALUE 1
+                MAXVALUE 99999999999999999999999999999999
+                START WITH 1
+                INCREMENT BY 1
+                CACHE 20;
+                INSERT INTO SUPPLIER VALUES(SUPPLIER_SEQ.NEXTVAL,'NESTLE FOODS');
+                INSERT INTO SUPPLIER VALUES(SUPPLIER_SEQ.NEXTVAL,'DOMINOS');
+                INSERT INTO SUPPLIER VALUES(SUPPLIER_SEQ.NEXTVAL,'PIZZ HUT');
+                INSERT INTO SUPPLIER VALUES(SUPPLIER_SEQ.NEXTVAL,'BURGER KING');
+                INSERT INTO SUPPLIER VALUES(SUPPLIER_SEQ.NEXTVAL,'MCDONALDS');
+                SELECT * FROM SUPPLIER;
+
+                5
+
+                SET SERVEROUTPUT ON
+                DECLARE 
+                MSEQ NUMBER;
+                BEGIN
+                SELECT SUPPLIER_SEQ.NEXTVAL INTO MSEQ FROM DUAL;
+                INSERT INTO SUPPLIER(ID) VALUES(MSEQ);
+                COMMIT;
+                DBMS_OUPTUT.PUT_LINE('MSEQ='||MSEQ);
+                END;
+                /
+                SELECT * FROM SUPPLIER;
+
+                6
+
+                ALTER SEQUENCE MY_SEQ_3
+                INCREMENT BY 1
+                MINVALUE 1
+                MAXVALUE 1000000
+                NOCYCLE;
+                SELECT MY_SEQ_3.NEXTVAL FORM DUAL;
+
+                7
+
+                DECLARE 
+                I INTEGER;
+                BEGIN
+                INSERT INTO SUPPLIER (ID) VALUES (SUPPLIER_SEQ.NEXTVAL);
+                SELECT SUPPLIER_SEQ.CURRVAL INTO I FROM DUAL;
+                DBMS_OUTPUT.PUT_LINE('SUPPLIER_SEQ.CURRVAL = '||I);
+                END;
+                /
+
+                8
+
+                DROP SEQUENCE MY_FIRST_SEQ;
+                DROP SEQUENCE MY_SECOND_SEQ;
+                DROP SEQUENCE MY_SEQ_3;
+                DROP SEQUENCE SUPPLIER_SEQ;
+                DROP TABLE SUPPLIER;
+
+            </code></pre>
+        </SECTION>
+        
+        <section id="prac5">
+            <h2>Cursor in pl/sql</h2>
+            <pre><code>
+                1
+
+                CREATE TABLE EMPLOYEE(ID INT PRIMARY KEY, NAME VARCHAR2(20), SALARY DECIMAL(9,2));
+                
+                2
+
+                INSERT INTO EMPLOYEE VALUES(1, 'SHRAWANI',4000);
+                INSERT INTO EMPLOYEE VALUES(2, 'AYAUSHI',5000);
+                INSERT INTO EMPLOYEE VALUES(3, 'SWARA',2000);
+                INSERT INTO EMPLOYEE VALUES(4, 'SAKSHI',1000);
+                INSERT INTO EMPLOYEE VALUES(5,'VAISHNAVI',3000);
+
+                3
+
+                DECLARE 
+                TOTAL_ROWS NUMBER(2);
+                BEGIN
+                UPDATE EMPLOYEE SET SALARY = SALARY + 500 ;
+                IF SQL%NOTFOUND THEN
+                DBMS_OUTPUT.PUT_LINE('NO EMPLOYEE SELECTED');
+                ELSEIF SQL%FOUND THEN 
+                TOTAL_ROWS := SQL%ROWCOUNT;
+                DBMS_OUTPUT.PUT_LINE(TOTAL_ROWS || 'EMPLOYEE SELECTED');
+                END IF;
+                END;
+                SELECT * FROM EMPLOYEE;
+
+
+                4
+
+                DECLARE 
+                C_ID EMPLOYEE.ID%TYPE;
+                C_NAME EMPLOYEE.NAME%TYPE;
+                C_SAL EMPLOYEE.SALARY%TYPE;
+                CURSOR C_EMPLOYEE IS
+                SELECT ID, NAME, SALARY FROM EMPLOYEE;
+                BEGIN
+                OPEN C_EMPLOYEE;
+                LOOP
+                FETCH C_EMPLOYEE INTO C_ID, C_NAME, C_SAL;
+                EXIT WHEN C_EMPLOYEE%NOTFOUND;
+                DBMS_OUTPUT.PUT_LINE(C_ID || '' || C_NAME || '' || C_SALARY);
+                END LOOP;
+                CLOSE C_EMPLOYEE;
+                END;
+
+                5
+
+                DECLARE 
+                MY_RECORD EMPLOYEE%ROWTYPE;
+                CURSOR C1(MAX_WAGE NUMBER) IS
+                SELECT * FROM EMPLOYEE WHERE SALARY < MAX_WAGE;
+                BEGIN 
+                OPEN C1 (3500);
+                LOOP
+                FETCH C1 INTO MY_RECORD;
+                EXIT WHEN C1%NOTFUND;
+                DBMS_OUTPUT.PUT_LINE('NAME='||MY_RECORD.NAME||"SALARY = " ||MY_RECORD.SALARY);
+                END LOOP;
+                CLOSE C1;
+                END;
+                /
+
+            </code></pre>
+        </section>
+
+        <section id="prac6">
+            <h2>Procedures in pl/sql</h2>
+            <pre><code>
+
+            </code></pre>
+        </section>
+
+        <section id="prac7">c
+            <h2>Functions in pl/sql</h2>
+            <pre><code>
+                7th Practical
+
+                Q1 Create a function that compares two given number & display which one is greater than the other.
+
+                Code>
+
+                create or replace function compare(a in number, b in number) return boolean
+                as 
+                begin
+                ifa>b then 
+                return true;
+                else return false;
+                end if;
+                end compare;
+                /
+                declare
+                a boolean;
+                x number;
+                y number;
+                begin
+                x:= &number;
+                y:= &number;
+                a:= compare(x,y);
+                if a = ture then
+                dbms_output.put_line('first number is greater than second number');
+                else
+                dbms_output.put_line('first number is less than second number');
+                end if;
+                end;
+
+
+
+                Q2 Create a function to find factorial of a number 
+
+                Code>
+
+                Create a replace function factorial (num number)
+                return number 
+                as
+                fact number:=1;
+                res number:=1;
+                begin 
+                if num=0 then 
+                return1;
+                else 
+                while (fact<=num)
+                loop
+                res:=res*fact;
+                fact:=fact+1;
+                end loop;
+                return res;
+                end if;
+                end factorial;
+                /
+
+
+                Q3 create a function that counts a total number of records from a table.
+
+                Code>
+
+                Create table student (id number(5), name varchar2(20),mobile varchar2(20),email varchar2(25));
+                create sequence seq_stud
+                start with 101
+                increment by 1
+                create or replace procedure val_ins1(s_name IN varchar2,s_mobile IN varchar2,s_email IN varchar2);
+                begin
+                insert into student values(seq_stud.nextval,s_name,s_mobile,s_email);
+                commit;
+                end val_ins1;
+                /
+                exec val_ins1('Aady','9865321475','aady@gmail.com');
+                exec val_ins1('oreo','9857945475','oreo@gmail.com');
+                exec val_ins1('pratham','9815451475','pratham@gmail.com');
+                exec val_ins1('om','9865698475','om@gmail.com');
+                exec val_ins1('asmita','9818675475','asmita@gmail.com');
+
+                create or replace function count
+                return number 
+                as 
+                vcount number;
+                begin
+                select count(*) into vcount from student;
+                return vcount;
+                end count;
+                /
+                select count from dual;
+
+
+                Q4 create a function that generates the fibonacci sequence fill the given range 
+
+                code>
+
+                Create or replace function fibonacci (b number)
+                return number 
+                as
+                ft number:=0;
+                st number:=1;
+                nt number;
+                begin 
+                dbms_output.put_line(''||ft);
+                dbms_output.put_line(''||st);
+                for i in 1...b-2
+                loop
+                nt:=st+ft;
+                ft:=st;
+                st:=nt;
+                dbms_output.put_line(''||nt);
+                end loop;
+                return 0;
+                end fibonacci ;
+                / 
+                declare
+                x number;
+                y number;
+                begin
+                x:=& number;
+                y:= fibonacci (x);
+                end;
+                /
+
+                
+            </code></pre>
         </section>
 
         <section id="prac8">
